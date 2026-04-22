@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evden Eve Nakliyat | Profesyonel Taşıma Hizmetleri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2a6eff;
+            --secondary: #ff6b35;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(42, 110, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1541976590-713941681c7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* About */
+        .about {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: var(--radius);
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #adb5bd;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d3748;
+            color: #adb5bd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-truck-moving"></i>
+                    Evden Eve Nakliyat
+                </a>
+                <div class="nav-links">
+                    <a href="#home">Ana Sayfa</a>
+                    <a href="#services">Hizmetlerimiz</a>
+                    <a href="#about">Hakkımızda</a>
+                    <a href="#contact">İletişim</a>
+                </div>
+                <a href="tel:05530930325" class="cta-button">
+                    <i class="fas fa-phone"></i> Hemen Ara
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="animate">Evden Eve Nakliyat</h1>
+            <p class="animate">Profesyonel, güvenilir ve ekonomik taşıma hizmetleri. Eşyalarınızı özenle paketleyip, güvenle yeni evinize ulaştırıyoruz.</p>
+            <a href="#contact" class="cta-button animate">Ücretsiz Keşif Talebi</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hizmetlerimiz</h2>
+                <p>Size özel çözümler sunuyoruz</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Ev Taşıma</h3>
+                    <p>Ev eşyalarınızın güvenli ve hasarsız taşınması için profesyonel ekipman ve personel.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Ofis Taşıma</h3>
+                    <p>Ofis ekipmanlarınızın hızlı ve düzenli taşınması, iş kesintisini minimuma indirir.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Paketleme Hizmeti</h3>
+                    <p>Özel ambalaj malzemeleri ile eşyalarınızın profesyonel paketlenmesi.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Depolama</h3>
+                    <p>Güvenli ve iklim kontrollü depolama alanlarında eşyalarınızı saklama imkanı.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Mobilya Montaj</h3>
+                    <p>Taşıma sonrası mobilyalarınızın kurulum ve montaj hizmeti.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sigorta</h3>
+                    <p>Eşyalarınızın taşınması sırasında oluşabilecek risklere karşı sigorta güvencesi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hakkımızda</h2>
+                <p>Neden bizi tercih etmelisiniz?</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text animate">
+                    <h3>15 Yıllık Tecrübe</h3>
+                    <p>2008 yılından bu yana İstanbul ve çevre illerde binlerce başarılı taşıma gerçekleştirdik. Müşteri memnuniyeti odaklı çalışma prensibimizle sektörde lider konumdayız.</p>
+                    
+                    <h3>Profesyonel Ekip</h3>
+                    <p>Eğitimli ve deneyimli personelimiz, eşyalarınıza kendi eşyaları gibi özen gösterir. Modern taşıma ekipmanlarımız ile işinizi güvenle teslim edebilirsiniz.</p>
+                    
+                    <h3>Şeffaf Fiyatlandırma</h3>
+                    <p>Önceden belirlenen ve taşıma sırasında değişmeyen sabit fiyat politikamız ile sürpriz maliyetlerle karşılaşmazsınız.</p>
+                </div>
+                <div class="about-image animate">
+                    <img src="https://images.unsplash.com/photo-1589923186741-7d1d6ccee3c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nakliye Ekibimiz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>İletişim</h2>
+                <p>Ücretsiz keşif için hemen iletişime geçin</p>
+            </div>
+            <div class="contact-form animate">
+                <form action="https://formspree.io/f/mwkggqyv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="from">Taşınacak Adres</label>
+                        <input type="text" id="from" name="from" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">Taşınacak Yeni Adres</label>
+                        <input type="text" id="to" name="to" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Tercih Edilen Tarih</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ek Notlar</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Gönder
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-truck-moving"></i> Evden Eve Nakliyat
+                    </div>
+                    <p>Profesyonel taşıma hizmetleri ile eşyalarınız güvende. 15 yıllık tecrübemizle hizmetinizdeyiz.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <a href="#home">Ana Sayfa</a>
+                    <a href="#services">Hizmetlerimiz</a>
+                    <a href="#about">Hakkımızda</a>
+                    <a href="#contact">İletişim</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim Bilgileri</h4>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telefon:</strong><br>
+                            <a href="tel:05530930325" style="color: #adb5bd;">0553 093 03 25</a><br>
+                            <a href="tel:05461427866" style="color: #adb5bd;">0546 142 78 66</a>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-posta:</strong><br>
+                            <a href="mailto:info@evdenevenakliyat.com" style="color: #adb5bd;">info@evdenevenakliyat.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Adres:</strong><br>
+                            İstanbul, Türkiye
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Evden Eve Nakliyat. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.service-card, .about-text, .about-image, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Gönderildi!';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        form.reset();
+                    }, 2000);
+                }, 1500);
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

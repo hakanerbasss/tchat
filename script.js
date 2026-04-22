@@ -1,7 +1,7 @@
-// Evden Eve Nakliyat - JavaScript Dosyası
+// EEn Nakliyat - JavaScript Dosyası
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Evden Eve Nakliyat sitesi yüklendi!');
+    console.log('EEn Nakliyat sitesi yüklendi!');
     
     // Price Calculator Functionality
     initPriceCalculator();
@@ -174,7 +174,7 @@ function sendWhatsAppMessage() {
     const from = document.getElementById('from')?.value || '';
     const to = document.getElementById('to')?.value || '';
     
-    const message = `Merhaba, nakliye hizmeti için bilgi almak istiyorum:
+    const message = `Merhaba, EEn Nakliyat hizmeti için bilgi almak istiyorum:
     
 Ad Soyad: ${name}
 Telefon: ${phone}

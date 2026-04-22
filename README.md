@@ -1,4 +1,4 @@
-# Evden Eve Nakliyat Web Sitesi
+# EEn Nakliyat Web Sitesi
 
 Modern, responsive ve tam fonksiyonel nakliye web sitesi. Bu site GitHub Pages üzerinden yayınlanmaktadır.
 

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary: #2a6eff;
@@ -115,7 +116,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
+            padding: 180px 0 100px;
             background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1541976590-713941681c7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
@@ -341,6 +342,11 @@
     </style>
 </head>
 <body>
+    <!-- Test Banner -->
+    <div class="test-banner">
+        🚚 MERHABA! Bu bir test sitesidir - Evden Eve Nakliyat Demo
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -420,6 +426,34 @@
                     </div>
                     <h3>Sigorta</h3>
                     <p>Eşyalarınızın taşınması sırasında oluşabilecek risklere karşı sigorta güvencesi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white; -webkit-text-fill-color: white;">Başarılarımız</h2>
+                <p style="color: rgba(255,255,255,0.9)">15 yıllık tecrübemizle</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Başarılı Taşıma</span>
+                </div>
+                <div class="stat-item animate">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Müşteri Memnuniyeti</span>
+                </div>
+                <div class="stat-item animate">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Profesyonel Ekip</span>
+                </div>
+                <div class="stat-item animate">
+                    <span class="stat-number">7/24</span>
+                    <span class="stat-label">Destek Hattı</span>
                 </div>
             </div>
         </div>
@@ -539,10 +573,15 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Evden Eve Nakliyat. Tüm hakları saklıdır.</p>
+                <p>&copy; 2024 Evden Eve Nakliyat. Tüm hakları saklıdır. | <strong>TEST SİTESİ</strong></p>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/905530930325?text=Merhaba,%20Evden%20Eve%20Nakliyat%20hakkında%20bilgi%20almak%20istiyorum." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Smooth scroll
@@ -555,7 +594,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }
@@ -577,7 +616,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.service-card, .about-text, .about-image, .contact-form').forEach(el => {
+        document.querySelectorAll('.service-card, .about-text, .about-image, .contact-form, .stat-item').forEach(el => {
             observer.observe(el);
         });
 
@@ -608,6 +647,24 @@
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
                 header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        document.querySelector('.navbar').appendChild(mobileMenuBtn);
+        
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if(!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
             }
         });
     </script>
